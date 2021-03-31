@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="{% static 'login/css/login.css' %}">
+    <title>Login</title>
+    <link rel="icon" href=" {% static 'images/logo.png' %}" type="image/icon type">
+  </head>
+  <body>
+    <div class="container">
+    <div class="frame">
+        <div class="nav">
+            <ul class="links">
+                <li class="signin-active"><a class="btn">Existing User</a></li>
+                <li class="signup-inactive"><a class="btn">New User</a></li>
+            </ul>
+        </div>
+        
+        <div ng-app ng-init="checked = false">
+          
+            <form class="form-signin" action="/signin" method="post" name="form">
+              {% csrf_token %}
+              <label for="username">Username</label><input class="form-styling" type="text" name="username" placeholder="" />
+              <label for="usertype">Type of User</label>
+              <div class="radio">
+              <label><input type="radio" name="usertype" value="farmer">Farmer</label>
+              </div>
+              <div class="radio">
+              <label><input type="radio" name="usertype" value="wholesaler">Wholesaler</label>
+              </div>
+              <br>
+              <label for="password">Password</label> <input class="form-styling" type="password" name="password" placeholder="" />
+              
+              <input type="submit" ng-click="checked = !checked" class="btn-signup" value= "Login to your account">
+            </form>
+            <form class="form-signup" action="/signup" method="post" name="form">
+              {% csrf_token %}
+              <label for="fullname">Full name</label> <input class="form-styling" type="text" name="fullname" placeholder="" />
+              <label for="username">Username</label><input class="form-styling" type="text" name="username" placeholder="" /> 
+              <label for="phone number">Phone Number</label> <input class="form-styling" type="text" name="phone number" placeholder="" />
+              <label for="usertype">Type of User</label>
+              <div class="radio">
+              <label><input type="radio" name="usertype" value="farmer" >Farmer</label>
+              </div>
+              <div class="radio">
+              <label><input type="radio" name="usertype" value="wholesaler">Wholesaler</label>
+              </div>
+              <br>
+              <label for="password">Create password</label> <input class="form-styling" type="password" name="confirmpassword" placeholder="" />
+              <input type="submit" ng-click="checked = !checked" class="btn-signup" value= "REGISTER">
+            </form>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><div class="forgot"> <a href="#">Forgot your password?</a> </div>
+    </div>
+  </div>
+  <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src="{% static 'login/js/login.js' %}"></script>
+  </body>
+</html>
