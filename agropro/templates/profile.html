@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>AgroPro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color: #50C878;">
+    <a href="#" class="navbar-brand">
+        <img src="images/logo1.png" height="28" alt="">
+    </a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav">
+            <a href="#" class="nav-item nav-link active">Home</a>
+            <a href="#" class="nav-item nav-link">Predict</a>
+        </div>
+
+        <div class="navbar-nav ml-auto">
+        <div class="nav-item dropdown">
+				<a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"><img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar" alt="Avatar" style="height: 20px;width: 20px;border-radius:50%;"> User name <b class="caret"></b></a>
+				<div class="dropdown-menu">
+					<a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
+					<a href="#" class="dropdown-item"><i class="fa fa-envelope"></i> Notifications</a>
+					<div class="divider dropdown-divider"></div>
+					<a href="#" class="dropdown-item"><i class="fa fa-sign-out"></i> Logout</a>
+				</div>
+    </div>
+    <div><p style="visibility:hidden;">hi</p></div>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-3" style="position: fixed;left:0%;width: 25%;top:50px;height: 100%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+      <form>
+      <br><img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar" style="display: block;margin-left: auto;margin-right: auto;border-radius:50%;">
+      <h6 class="text-center">Upload a profile photo...</h6>
+      <div class="form-row">
+      <div class="col offset-md-2 mb-3">
+      <input type="file" class="file-upload">
+      </div>
+      </div>
+      <div class="form-row">
+        <div class="col mb-3">
+          <label for="description">About yourself</label>
+          <textarea class="form-control" id="description" placeholder="Description" rows="6"></textarea>
+        </div>
+      </div>
+      <div class="text-center">
+      <button class="btn btn-primary" type="submit">Save</button>
+      <button class="btn btn-light" type="submit">reset</button>
+    </div>
+      </form>
+    </div>
+    <div class="col-md-9 offset-md-3">
+        <form>
+        <br><h2>Personal Info</h2>
+        <br><div class="form-row">
+        <div class="col-md-4 mb-3">
+      <label for="firstname">First name</label>
+      <input type="text" class="form-control" id="firstname" placeholder="First name" value="" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="lastname">Last name</label>
+      <input type="text" class="form-control" id="lastname" placeholder="Last name" value="" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" placeholder="Username" required>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" placeholder="Email" value="" required>
+    </div>
+    <div class="col-md-6 mb-3">
+    <label for="phoneno">Phone No.</label>
+    <input type="text" class="form-control" id="Phoneno" placeholder="Phone No." value="" required>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col mb-3">
+      <label for="address">Address</label>
+      <input type="text" class="form-control" id="address" placeholder="Address" value="" required>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="city">City</label>
+      <input type="text" class="form-control" id="city" placeholder="City" required>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="state">State</label>
+      <input type="text" class="form-control" id="state" placeholder="State" required>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="zip">Zip</label>
+      <input type="text" class="form-control" id="zip" placeholder="Zip" required>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Save</button>
+  <button class="btn btn-light" type="submit">reset</button>
+</form>
+  <br><hr style="color:gray;background-color:gray;">
+  <form>
+  <br><h2>Current Crop Info</h2>
+
+  </form>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
