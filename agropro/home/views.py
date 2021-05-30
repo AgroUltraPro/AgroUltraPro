@@ -2,14 +2,18 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as authlogin
+from django.contrib.auth import logout as authlogout
 from .models import Farmer, Wholesaler
+from django.views.decorators.csrf import csrf_exempt
+
+
 
 # Create your views here.
 def index(request):
     if request.user.is_authenticated:
         utype=request.user.username
         utype=utype[utype.rfind('-')+1:]
-        context={'utype':utype,'username':request.user.username[:request.user.username.rfind('-')+1]}
+        context={'utype':utype,'username':request.user.username[:request.user.username.rfind('-')]}
         print(request.user.username,utype,"Ho raha hai")
     else:
         context={'utype':None,'username':None}
@@ -53,26 +57,23 @@ def signup(request):
         fname,lname=name.split(' ')
         print("***",name,username,phone,password1,utype,"***")
 
-        #Check the inputs
-        # if utype=='farmer':
-        #     # farmer=Farmer(email=username,phone=phone,password=password1)
-        #     #farmer.save()
-        # if utype=='wholesaler':
-        #     # ws=Wholesaler(email=username,phone=phone,password=password1)
-        #     #ws.save()
+       #Check the inputs
+        if utype=='farmer':
+            farmer=Farmer(username=username,phone=phone,name=name)
+            farmer.save()
+        if utype=='wholesaler':
+            ws=Wholesaler(username=username,phone=phone,name=name)
+            ws.save()
 
         # #Creating User
         user=User.objects.create_user(username,email=None,password=password1,first_name=fname,last_name=lname)
         return redirect('/login')
 
-def market(request):
-    return render(request,'market.html')
 
-def prediction(request):
-    return render(request,'predic.html')
-
-def notification(request):
-    return render(request,'notif.html')
-
-def profile(request):
-    return render(request,'profile.html')
+def logout(request):
+    print("Cheemad bhai sort karado")
+    if request.method == 'POST':
+        print("Chems bhai please kara hi do")
+        authlogout(request)
+        return redirect('/login')
+    return redirect('/login')

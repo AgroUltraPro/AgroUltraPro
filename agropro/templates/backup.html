@@ -1,0 +1,157 @@
+<!-- <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>AgroPro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" href=" {% static 'images/logo.png' %}" type="image/icon type">
+    <link rel="stylesheet" href="{% static 'css/trade.css' %}">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color: #50C878;">
+    <a href="/" class="navbar-brand">
+        <img src= " {% static 'images/logo1.png' %}" height="28" alt="">
+    </a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav">
+            <a href="/" class="nav-item nav-link">Home</a>
+            <a href="/wholesaler/farmersmarket" class="nav-item nav-link active">Farmer's Market</a>
+            
+        </div>
+
+        <div class="navbar-nav ml-auto">
+          <div class="nav-item dropdown">
+            <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"><img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar" alt="Avatar" style="height: 20px;width: 20px;border-radius:50%;"> {{ username }} <b class="caret"></b></a>
+            <div class="dropdown-menu">
+              <a href="/{{ utype }}/profile" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
+              <a href="/{{ utype }}/notifications" class="dropdown-item"><i class="fa fa-envelope"></i> Notifications</a>
+              <div class="divider dropdown-divider"></div> -->
+              <!-- <a href="/logout" class="dropdown-item"><i class="fa fa-sign-out"></i> Logout</a> <i class="fa fa-sign-out">Logout</i> </button> -->
+              <!-- <form method="post" action="/logout"  name='form'> 
+                {% csrf_token %}
+                <button  class="dropdown-item" ><i class="fa fa-sign-out">Logout</i></button>
+              </form> 
+              
+            </div>
+            
+          </div>
+        </div>
+    </div>
+</nav>
+<div class="container">
+<div class="row">
+
+  <div class="col-md-12">
+    <div class="grid search">
+      <div class="grid-body">
+        <div class="row">
+
+          <div class="col-md-3" style="position: fixed;right:0%;top:50px;height: 100%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            <br>
+            <h2 class="grid-title" style="text-align: center;"><i class="fa fa-filter"></i> Filters</h2>
+            <hr>
+
+            <h4>By category:</h4>
+            <div class="checkbox">
+              <label><input type="checkbox" class="icheck"> Farmer</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" class="icheck"> Wholesaler</label>
+            </div>
+
+            <div class="padding"></div>
+            <br>
+            <h4>By date:</h4>
+            From
+            <div class="input-group date form_date" data-date-format="dd-mm-yyyy">
+              <input type="date" class="form-control">
+            </div>
+
+
+            To
+            <div class="input-group date form_date" data-date-format="dd-mm-yyyy">
+              <input type="date" class="form-control">
+            </div>
+
+
+            <div class="padding"></div>
+
+            <br>
+            <h4>By price:</h4>
+            <div class=""><p>0 - 500</p></div>
+            <div class="input-group range">
+              <input type="range" name="" value="">
+            </div>
+
+          </div>
+
+          <div class="col-md-9">
+
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="search...">
+              <span class="input-group-btn">
+                <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
+            <p>Showing all results matching ""</p>
+
+            <div class="padding"></div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    Order by <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Name</a></li>
+                    <li><a href="#">Date</a></li>
+                    <li><a href="#">View</a></li>
+                    <li><a href="#">Rating</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <tbody><tr>
+                  <td class="number text-left">1</td>
+                </tr>
+                <tr>
+                  <td class="number text-left">2</td>
+                </tr>
+                <tr>
+                  <td class="number text-left">3</td>
+                </tr>
+                <tr>
+                  <td class="number text-left">4</td>
+                </tr>
+                <tr>
+                  <td class="number text-left">5</td>
+                </tr>
+              </tbody></table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  </body>
+</html> -->

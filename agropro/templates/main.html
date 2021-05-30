@@ -27,21 +27,31 @@
               {% endifequal %}
               {% ifequal utype 'wholesaler' %}
                 <a href="wholesaler/farmersmarket" class="nav-item nav-link">Farmer's Market</a>
+                
               {% endifequal %}
             {% endif %}
         </div>
 
         <div class="navbar-nav ml-auto">
-          <form class="form-inline">
-              <div class="input-group">
-                  <input type="text" class="form-control" placeholder="search..">
-                  <div class="input-group-btn">
-                      <button type="button" class="btn btn-secondary"><i class="fa fa-search"></i></button>
-                  </div>
+              <div class="nav-item dropdown">
+                {% if username is not None %}
+                <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"><img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar" alt="Avatar" style="height: 20px;width: 20px;border-radius:50%;"> {{ username }} <b class="caret"></b></a>
+                {% else %}
+                <a href="/login"  class="nav-item nav-link"> Login <b class="caret"></b></a>
+                {% endif %}
+                <div class="dropdown-menu">
+                  <a href="/{{ utype }}/profile" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
+                  <a href="/{{ utype }}/notifications" class="dropdown-item"><i class="fa fa-envelope"></i> Notifications</a>
+                  <div class="divider dropdown-divider"></div>
+                  <!-- <a href="/logout" class="dropdown-item"><i class="fa fa-sign-out"></i> Logout</a> <i class="fa fa-sign-out">Logout</i> </button> -->
+                  <form method="post" action="/logout"  name='form'> 
+                    {% csrf_token %}
+                    <button  class="dropdown-item" ><i class="fa fa-sign-out">Logout</i></button>
+                  </form> 
+                  
+                </div>
+                
               </div>
-          </form>
-            <a href="/login" class="nav-item nav-link">Login</a>
-        </div>
     </div>
 </nav>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -55,7 +65,7 @@
           <img src="{% static 'images/farmer3.jpg' %}" alt="First Slide" width="100%" height="550px" style="opacity: 0.5;">
         <div class="carousel-caption">
         <h3 class="h3-responsive"></h3>
-        <p><a href="" target="_blank" class="btn btn-light btn-lg rounded-pill">Prediction</a></p>
+        <!-- <p><a href="" target="_blank" class="btn btn-light btn-lg rounded-pill">Prediction</a></p> -->
         </div>
       </div>
       <div class="carousel-item">
