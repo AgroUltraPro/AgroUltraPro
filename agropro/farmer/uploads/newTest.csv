@@ -1,0 +1,11 @@
+,timestamp,state,district,market,commodity,variety,arrival_date,min_price,max_price,modal_price
+0,1616142903,Andhra Pradesh,Chittor,Kalikiri,Tomato,Local,19/03/2021,560,900,730
+1,1616142903,Andhra Pradesh,Chittor,Mulakalacheruvu,Tomato,Local,19/03/2021,500,800,650
+2,1616142903,Andhra Pradesh,Chittor,Vayalapadu,Tomato,Local,19/03/2021,680,1120,880
+3,1616142903,Andhra Pradesh,East Godavari,Rajahmundry,Paddy(Dhan)(Common),Paddy,19/03/2021,1868,1868,1868
+4,1616142903,Andhra Pradesh,East Godavari,Rajahmundry,Paddy(Dhan)(Common),Swarna Masuri (New),19/03/2021,1888,1888,1888
+5,1616142903,Andhra Pradesh,Kurnool,Allagadda,Jowar(Sorghum),Jowar ( White),19/03/2021,2450,2700,2560
+6,1616142903,Andhra Pradesh,Kurnool,Allagadda,Paddy(Dhan)(Common),Sona,19/03/2021,1800,2050,1950
+7,1616142903,Andhra Pradesh,Kurnool,Alur,Jowar(Sorghum),Jowar ( White),19/03/2021,2270,2370,2320
+8,1616142903,Andhra Pradesh,Kurnool,Atmakur,Paddy(Dhan)(Common),Sona Mahsuri,19/03/2021,1800,1800,1800
+9,1616142903,Andhra Pradesh,Kurnool,Pattikonda,Onion,Local,19/03/2021,800,1000,900

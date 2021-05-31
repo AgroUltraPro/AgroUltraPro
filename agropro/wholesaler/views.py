@@ -169,9 +169,43 @@ def notification(request):
 
 def profile(request):
     if request.user.is_authenticated:
-        utype=request.user.username
-        utype=utype[utype.rfind('-')+1:]
-        context={'utype':utype,'username':request.user.username[:request.user.username.rfind('-')]}
-        return render(request,'profile.html',context)
+        username=request.user.username
+        username=username[:username.rfind('-')]
+        # context={'utype':utype,'username':request.user.username[:request.user.username.rfind('-')+1]}
+        print(username,"Ho raha hai")
+        instance = Wholesaler.objects.filter(username = request.user.username).values()[0]
+        # crops = Crop.objects.filter(whole = instance['id'],available = True).values()
+        
+        print("The instance is:",instance)
+        # print("The crop instance  is:",crops)
+        context = {
+            'instance':instance
+            # 'crops':crops
+        }
+
+        return render(request,'profileWhole.html',context = context)
     else:
-        return redirect('/login')
+        return redirect('/')
+
+
+def editProfile(request):
+    if request.method == 'POST' and request.user.is_authenticated:
+        username=request.user.username
+        username=username[:username.rfind('-')]
+        # context={'utype':utype,'username':request.user.username[:request.user.username.rfind('-')+1]}
+        print(username,"Ho raha hai")
+        instance = Wholesaler.objects.filter(username = request.user.username).update(name = request.POST['name'],state = request.POST['state'],email = request.POST['email'],address = request.POST['address'],phone = request.POST['phone'])
+        
+        print("The instance is:",instance)
+        print("The new changes are:",request.POST['state'],request.POST['name'],request.POST['phone'],request.POST['email'],request.POST['address'])
+
+        # instance['name'] = request.POST['name']
+        # instance['phone'] = request.POST['phone']
+        # instance['area'] = request.POST['area']
+        # instance['state'] = request.POST['state']
+        # instance['address'] = request.POST['address']
+        # instance['email'] = request.POST['email']
+        # instance.save()
+        # context = instance
+        return redirect('/wholesaler/profile')
+
