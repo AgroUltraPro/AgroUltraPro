@@ -1,0 +1,195 @@
+Crop,State,Cost of Cultivation (`/Hectare) A2+FL,Cost of Cultivation (`/Hectare) C2,Cost of Production (`/Quintal) C2,Yield (Quintal/ Hectare)
+Cotton(lint),Uttar Pradesh,,,,4.86
+Cotton(lint),Maharashtra,,,,3.44
+Cotton(lint),Tamil Nadu,,,,9.44
+Cotton(lint),Andhra Pradesh,,,,6.24
+Cotton(lint),Telangana,,,,5.15
+Cotton(lint),Karnataka,,,,6.26
+Cotton(lint),Odisha,,,,4.59
+Cotton(lint),Madhya Pradesh,,,,5.28
+Cotton(lint),Punjab,,,,6.97
+Cotton(lint),Rajasthan,,,,7.8
+Cotton(lint),Gujarat,,,,5.49
+Wheat,Maharashtra,,,,15.5753
+Wheat,Andhra Pradesh,,,,10
+Wheat,Assam,,,,11.3462
+Wheat,Bihar,,,,22.06
+Wheat,Chhattisgarh,,,,11.855
+Wheat,Gujarat,,,,30.3479
+Wheat,Haryana,,,,50.295
+Wheat,Himachal Pradesh,,,,16.7085
+Wheat,Jammu & Kashmir,,,,14.0424
+Wheat,Jharkhand,,,,18.7629
+Wheat,Karnataka,,,,8.4348
+Wheat,Madhya Pradesh,,,,21.64
+Wheat,Orissa,,,,15.5172
+Wheat,Punjab,,,,48.98
+Wheat,Rajasthan,,,,31.75
+Wheat,Uttar Pradesh,,,,31.13
+Wheat,Uttarakhand,,,,23.6856
+Wheat,West Bengal,,,,28.0049
+Jowar,Maharashtra,,,,8.24
+Jowar,Karnataka,,,,10.95
+Jowar,Madhya Pradesh,,,,10.88
+Jowar,Andhra Pradesh,,,,13.24
+Jowar,Tamil Nadu,,,,7.32
+Jowar,Uttar Pradesh,,,,10.65
+Jowar,Gujarat,,,,11.38
+Jowar,Rajasthan,,,,2.88
+Jowar,Haryana,,,,2.73
+Jowar,Orissa,,,,6
+Groundnut,Andhra Pradesh,,,,12.72
+Groundnut,Gujarat,,,,18.79
+Groundnut,Karnataka,,,,8.74
+Groundnut,Maharashtra,,,,13.82
+Groundnut,Rajasthan,,,,23.8
+Groundnut,Madhya Pradesh,,,,11.57
+Groundnut,Tamil Nadu,,,,16.34
+Groundnut,Orissa,,,,15.19
+Groundnut,West Bengal,,,,15.43
+Groundnut,Uttar Pradesh,,,,8.12
+Sugarcane,Uttar Pradesh,,,,843
+Sugarcane,Maharashtra,,,,800
+Sugarcane,Tamil Nadu,,,,1070
+Sugarcane,Karnataka,,,,846
+Sugarcane,Andhra Pradesh,,,,780
+Sugarcane,Bihar,,,,568
+Sugarcane,Gujarat,,,,650
+Sugarcane,Haryana,,,,730
+Sugarcane,Punjab,,,,700
+Sugarcane,Uttarakhand,,,,612
+Rice,West Bengal,,,,26.88
+Rice,Uttar Pradesh,,,,23.58
+Rice,Andhra Pradesh,,,,31.46
+Rice,Punjab,,,,37.41
+Rice,Tamil Nadu,,,,39.18
+Rice,Bihar,,,,21.55
+Rice,Chhattisgarh,,,,15.97
+Rice,Odisha,,,,14.5
+Rice,Assam,,,,17.8
+Rice,Karnataka,,,,27.83
+Rice,Maharashtra,,,,22.5
+Rice,Gujarat,,,,13.56
+Rice,Kerala,,,,21.33
+Rice,Haryana,,,,24.55
+Maize,West Bengal,,,,26.88
+Maize,Karnataka,,,,35
+Maize,Rajasthan,,,,18
+Maize,Madhya Pradesh,,,,12
+Maize,Maharashtra,,,,29
+Maize,Andhra Pradesh,,,,53
+Maize,Uttar Pradesh,,,,15
+Maize,Bihar,,,,22
+Maize,Gujarat,,,,16
+Maize,Tamil Nadu,,,,45
+Maize,Haryana,,,,13
+Barley,Rajasthan,,,,35.97
+Barley,Uttar Pradesh,,,,30.16
+Barley,Haryana,,,,38.66
+Barley,Punjab,,,,37.47
+Barley,Himachal Pradesh,,,,17.7
+Barley,Uttarakhand,,,,14.24
+Barley,Maharashtra,,,,4.65
+Barley,West Bengal,,,,15.17
+Barley,Bihar,,,,19.9
+Barley,Madhya Pradesh,,,,19.81
+Coriander,Haryana,,,,0.4
+Coriander,Uttar Pradesh,,,,0.3
+Coriander,Maharashtra,,,,0.3
+Coriander,Assam,,,,0.45
+Coriander,Rajasthan,,,,0.45
+Coriander,Gujarat,,,,0.35
+Coriander,Madhya Pradesh,,,,0.6
+Onion,Maharashtra,,,,240
+Onion,Karnataka,,,,136.1
+Onion,Gujarat,,,,240
+Onion,Bihar,,,,203
+Onion,Madhya Pradesh,,,,175.2
+Onion,Andhra Pradesh,,,,170.1
+Onion,Rajasthan,,,,200
+Onion,Haryana,,,,250
+Onion,West Bengal,,,,140.4
+Onion,Uttar Pradesh,,,,161.8
+Onion,Tamil Nadu,,,,100.3
+Onion,Sikkim,,,,53.3
+Onion,Punjab,,,,222.4
+Onion,Orissa,,,,111.3
+Onion,Mizoram,,,,88
+Onion,Pondicherry,,,,40
+Onion,Jharkhand,,,,202
+Onion,Jammu & Kashmir,,,,143
+Onion,Himachal Pradesh,,,,160
+Onion,Delhi,,,,180
+Onion,Chhattisgarh,,,,155
+Onion,Assam,,,,29.6
+Tobacco,Bihar,,,,18.91
+Tobacco,Gujarat,,,,16.58
+Tobacco,Uttar Pradesh,,,,21.46
+Tobacco,Andhra Pradesh,,,,15
+Tobacco,West Bengal,,,,15.56
+Tobacco,Maharashtra,,,,10
+Tobacco,Rajasthan,,,,17.43
+Tobacco,Orissa,,,,6.43
+Tobacco,Karnataka,,,,6.65
+Cabbage,Gujarat,,,,218
+Cabbage,Haryana,,,,154
+Cabbage,Himachal Pradesh,,,,341
+Cabbage,Jammu and Kashmir,,,,290
+Cabbage,Jharkhand,,,,156
+Cabbage,Karnataka,,,,208
+Cabbage,Kerala,,,,144
+Cabbage,Madhya Pradesh,,,,296
+Cabbage,Maharashtra,,,,204
+Cabbage,Manipur,,,,119
+Cabbage,West Bengal,,,,281
+Cabbage,Uttarakhand,,,,117
+Cabbage,Nagaland,,,,200
+Cabbage,Odisha,,,,281
+Cabbage,Punjab,,,,176
+Cabbage,Rajasthan,,,,58
+Cabbage,Sikkim,,,,61
+Cabbage,Tamil Nadu,,,,559
+Cabbage,Telangana,,,,150
+Cabbage,Uttar Pradesh,,,,350
+Cabbage,Andaman and Nicobar Islands,,,,67
+Cabbage,Andhra Pradesh,,,,190
+Cabbage,Arunachal Pradesh,,,,240
+Cabbage,Assam,,,,209
+Cabbage,Bihar,,,,180
+Cabbage,Chhattisgarh,,,,184
+Soyabean,Rajasthan,,,,7.8
+Soyabean,Madhya Pradesh,,,,7.14
+Soyabean,Maharashtra,,,,11.25
+Soyabean,Andhra Pradesh,,,,10.28
+Soyabean,Chhattisgarh,,,,8.84
+Soyabean,Gujarat,,,,9.72
+Soyabean,Karnataka,,,,11.24
+Peas & beans (Pulses),Uttar  Pradesh,,,,107
+Peas & beans (Pulses),Madhya Pradesh,,,,100
+Peas & beans (Pulses),Jharkhand,,,,148
+Peas & beans (Pulses),Himachal Pradesh,,,,118
+Peas & beans (Pulses),Punjab,,,,102
+Peas & beans (Pulses),West Bengal,,,,61
+Peas & beans (Pulses),Haryana,,,,71
+Peas & beans (Pulses),Bihar,,,,90
+Peas & beans (Pulses),Uttarakhand,,,,67
+Peas & beans (Pulses),Jammu & Kashmir,,,,208
+Peas & beans (Pulses),Orissa,,,,90
+Peas & beans (Pulses),Maharashtra,,,,100
+other oilseeds,Uttar Pradesh,,,,22.86
+other oilseeds,Haryana,,,,16.67
+other oilseeds,Bihar,,,,14.03
+other oilseeds,Tamil Nadu,,,,13.29
+other oilseeds,Andhra Pradesh,,,,7.71
+other oilseeds,Maharashtra,,,,5.21
+other oilseeds,Karnataka,,,,3.83
+Niger seed,Madhya Pradesh,,,,3.43
+Niger seed,Odisha,,,,3.6
+Niger seed,Chhattisgarh,,,,1.78
+Niger seed,Maharashtra,,,,2.86
+Niger seed,Karnataka,,,,3.57
+Niger seed,Andhra Pradesh,,,,7.5
+Niger seed,Gujarat,,,,2.86
+Niger seed,Assam,,,,5
+Niger seed,Jharkhand,,,,5.26
+Niger seed,West Bengal,,,,7

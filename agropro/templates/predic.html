@@ -1,0 +1,272 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+
+</head>
+<body id='BodyMain'>
+    <!-- <h1>Prediction</h1>
+
+    <div>
+        <h3>Start Predicting: </h3>
+        <div style="line-height: 3rem">
+            <form action = "/farmer/prediction" enctype="multipart/form-data" method="POST">
+                {% csrf_token %}
+                <label>Name : </label>
+                <input type="text" name="season"><br/>
+                <label>Select File: </label>
+                <input type="file" name="file"><br/>
+                <button type="submit">SUBMIT</button>
+            </form>
+        </div>
+    </div> -->
+    <!DOCTYPE html>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>AgroPro</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+      </head>
+      <body>
+        <nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color: #50C878;">
+        <a href="#" class="navbar-brand">
+            <img src="images/logo1.png" height="28" alt="">
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="/" class="nav-item nav-link ">Home</a>
+                <a href="/farmer/prediction" class="nav-item nav-link active">Predict</a>
+            </div>
+    
+            <div class="navbar-nav ml-auto">
+            <div class="nav-item dropdown">
+                    <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"><img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar" alt="Avatar" style="height: 20px;width: 20px;border-radius:50%;"> User name <b class="caret"></b></a>
+                    <div class="dropdown-menu">
+                        <a href="/farmer/profile" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
+                        <a href="/farmer/notifications" class="dropdown-item"><i class="fa fa-envelope"></i> Notifications</a>
+                        <div class="divider dropdown-divider"></div>
+                        <a href="/logout" class="dropdown-item"><i class="fa fa-sign-out"></i> Logout</a>
+                    </div>
+        </div>
+        <div><p style="visibility:hidden;">hi</p></div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-3" style="position: fixed;left:0%;width: 25%;top:50px;height: 100%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            <br>
+            <h2 class="grid-title" style="text-align: center;">Prediction</h2>
+            <hr>
+          <form>
+          <br>
+          <div class="form-group">
+          <select class="form-control" id="season">
+            <option disabled selected>Select Season</option>
+            <option>Kharif</option>
+            <option>Rabi</option>
+            <option>Whole Year</option>
+            <!-- <option>Summer</option>
+            <option>Autumn</option> -->
+          </select>
+        </div>
+        <br>
+          <img src="https://icon-library.net/images/photo-placeholder-icon/photo-placeholder-icon-17.jpg" class="avatar img-circle img-thumbnail" alt="avatar" style="display: block;margin-left: auto;margin-right: auto;width:70%;" id = "changeImage">
+          <br><h6 class="text-center">Upload soil photo</h6>
+          <div class="form-row">
+          <div class="col offset-md-2 mb-3">
+          <input type="file" class="file-upload" id = "soilImage">
+          </div>
+          </div><br><br>
+          <div class="text-center">
+          
+        </div>
+          </form>
+          <button class="btn btn-primary" onclick="checkImage()" style="transform: translate(6rem,-2rem);">Submit</button>
+        </div>
+        <div class="col-md-9 offset-md-3" >
+          <br>
+          <!-- style="background-image: url('../static/images/farmer5.png');background-repeat: no-repeat;background-attachment: fixed ;  
+          background-position: center; -->
+          <div style="position: fixed;left:42%;top:20%;width:13rem;height:13rem;z-index: -1;">
+          <img src="{% static 'images/farmer5.png' %}" id = "imageBackground" alt="" style="display: block;margin-left: auto;margin-right: auto;height: 200%;opacity: 0.5;">
+
+          </div>
+
+          <div id = "outputDiv" style="display: grid;
+                      grid-template-columns: repeat(2,0.5fr);padding-top:2rem;">
+                      
+                      <!-- <div style="background-color: #50C878;width: 20rem;height:12rem;margin-bottom: 5rem;color:white">
+                        <div class="innerDiv" style="padding:2rem;padding-left:3rem ;">
+                          <p><strong>Crop:</strong> Rice</p>
+                        <p><strong>Production:</strong> 12000</p>
+                        <p><strong>Price(Assumption):</strong> 1200000</p>
+                        <div style="align-items: center; transform: translate(4.5rem,0rem);">
+                          <button onclick = "setCropPredict(0)">Choose</button>
+                        </div>
+                        </div>
+                        
+                        
+                        </div>
+            <div style="background-color: #50C878;width: 20rem;height:12rem">
+            
+            </div>
+            <div style="background-color: #50C878;width: 20rem;height:12rem">
+            
+            </div>
+             -->
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script>
+        // $(document).ready(function() {
+        // $('.mdb-select').materialSelect();
+        // });
+      </script>
+    
+      </body>
+    </html>
+    
+
+    <!-- <button onclick="setCropPredict()">Test</button> -->
+</body>
+<script>
+    var newFormData  = new FormData();
+    const fileField = document.querySelector('input[type="file"]');
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#changeImage').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#soilImage").change(function(){
+        readURL(this);
+    })
+
+
+    // let cropInfo = {
+    //     name:'Cotton',
+    //     quantity:12000,
+    //     price:62.5,
+    //     tsp:750000
+    // }
+
+    let mainOutput = [];
+
+    var setCropPredict = function(index){
+      
+      let cropInfo = {
+        name:mainOutput[index]['crop'],
+        quantity:parseFloat(mainOutput[index]['production'].toFixed(2)),
+        price:  parseFloat(parseFloat(mainOutput[index]['price']/mainOutput[index]['production']).toFixed(2)),
+        tsp:750000
+    }
+
+    console.log(cropInfo, new Date());
+        var form = document.createElement("form");
+        form.setAttribute("method", "post");
+        form.setAttribute("action", "/farmer/setCrop");
+
+        let token = document.createElement("input");
+        token.setAttribute("type", "hidden");
+        token.setAttribute("name", "csrfmiddlewaretoken");
+        token.setAttribute('value','{{csrf_token }}')
+
+        let name = document.createElement("input");
+        name.setAttribute("type", "text");
+        name.setAttribute("name", "name");
+        name.setAttribute('value',cropInfo.name)
+
+        let quantity = document.createElement("input");
+        quantity.setAttribute("type", "text");
+        quantity.setAttribute("name", "quantity");
+        quantity.setAttribute('value',cropInfo.quantity)
+
+        let price = document.createElement("input");
+        price.setAttribute("type", "text");
+        price.setAttribute("name", "price");
+        price.setAttribute('value',cropInfo.price)
+
+        let tsp = document.createElement("input");
+        tsp.setAttribute("type", "text");
+        tsp.setAttribute("name", "tsp");
+        tsp.setAttribute('value',cropInfo.tsp)
+
+        form.appendChild(token)
+        form.appendChild(name);
+        form.appendChild(quantity);
+        form.appendChild(price);
+        form.appendChild(tsp);
+
+        document.getElementById('BodyMain').appendChild(form);
+
+        form.submit();
+    }
+
+    var checkImage = function(){
+        console.log("Clicked image check");
+        console.log(document.getElementById('season').value);
+        console.log(newFormData);
+        newFormData.append('season',document.getElementById('season').value);
+        newFormData.append('file', fileField.files[0]);
+        
+        fetch('/farmer/prediction', {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': '{{csrf_token}}'
+                },
+            // body:JSON.stringify({
+            //     'season':document.getElementById('season').value,
+            //     'file':newFormData
+            // })
+            body:newFormData
+        }).then((response) => response.json())
+        .then((result)=>{
+            console.log('The result is:',result);
+            mainOutput = result.result;
+
+            // document.getElementById('imageBackground').remove();
+           
+            document.getElementById('outputDiv').innerHTML = "";
+            for(var i=0;i<mainOutput.length;i++){
+              document.getElementById('outputDiv').innerHTML += '<div style="background-color: #50C878;width: 20rem;height:13rem;margin-bottom: 5rem;color:white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);">'+
+                '<div class="innerDiv" style="padding:2rem;padding-left:3rem ;">'+
+                  '<p><strong>Crop:</strong> '+mainOutput[i]['crop']+'</p>'+
+                '<p><strong>Production:</strong> '+mainOutput[i]['production'].toFixed(2)+'</p>'+
+                '<p><strong>Price(Assumption):</strong>'+mainOutput[i]['price'].toFixed(2)+'</p>'+
+                '<div style="align-items: center; transform: translate(4.5rem,0rem);">'+
+                  "<button class='btn btn-light' onclick = 'setCropPredict("+i+")'>Choose</button>"+
+                '</div>'+
+                '</div>'+
+                '</div>';
+            }
+            
+        })
+
+    }
+
+
+    // console.log(csrftoken)
+</script>
+</html>

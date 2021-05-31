@@ -82,7 +82,7 @@
                       <!-- <td>{{ i|last }}</td> -->
                       {% if not i.3 %}
                         {% ifequal utype "farmer" %}
-                          <form action="/farmer/notifications" method="post">
+                          <form action="/farmer/notifications/" method="post">
                             {% csrf_token %}
                             <input type="hidden" name="id" value="{{ i|last }}">
                           <td><button type="submit">Accept</button></td>

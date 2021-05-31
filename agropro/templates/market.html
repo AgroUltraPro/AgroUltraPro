@@ -8,7 +8,7 @@
     <title>AgroPro</title>
     <link rel="icon" href=" {% static 'images/logo.png' %}" type="image/icon type">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh6PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- <link rel="stylesheet" href="trade.css"> -->
@@ -261,7 +261,7 @@
             <h2 class="grid-title" style="text-align: center;"><i class="fa fa-filter"></i> Filters</h2>
             <hr>
             
-            <h4>By Name:</h4>
+            <h6>By Name:</h6>
           <div class="form-group has-search">
             <span class="fa fa-search form-control-feedback"></span>
             {% ifequal filter.0|length 0 %}
@@ -273,8 +273,8 @@
 
             <div class="padding"></div>
 
-            <h4>By Crop:</h4>
-          <div class="form-group has-search">
+            <h6>By Crop:</h6>
+          <div class="form-group has-search" style="line-height: 0.5rem;">
             <span class="fa fa-search form-control-feedback"></span>
             {% ifequal filter.1|length 0 %}
               <input type="search" class="form-control" onkeyup="" placeholder="Crop.." name='crop' id='crop' value='{{request.GET.crop}}'>
@@ -282,22 +282,22 @@
               <input type="search" class="form-control" onkeyup="" placeholder="{{filter.1}}" name='crop' id='crop' value='{{request.GET.crop}}'>
             {% endifequal %}
           </div>
-            <div class="padding"></div>
+            <!-- <div class="padding"></div> -->
 
-            <h4>By Quantity:</h4>
+            <h6>By Quantity:</h6>
             <div class="slidecontainer">
               <p>0 - <span id="demo"></span></p>
-              <input type="range" min="1" max="10000" value="{{filter.2}}" class="slider"  name='qty'  id='qty' >
+              <input type="range" min="1" max="10000" value="{{filter.2}}" class="slider"  name='qty'  id='myRange' >
             </div>
 
 
-            <div class="padding"></div>
+            <!-- <div class="padding"></div> -->
 
             <br>
-            <h4>By price:</h4>
+            <h6>By price:</h6>
             <div class="slidecontainer">
               <p>0 - <span id="demo1"></span></p>
-              <input type="range" min="1" max="10000" value="{{filter.3}}" class="slider" name='price' id="price" >
+              <input type="range" min="1" max="10000" value="{{filter.3}}" class="slider" name='price' id="myRange1" >
             </div><br>
             <div class="text-center">
             <!-- <button class="btn btn-primary" type="submit">Save</button> -->
@@ -350,7 +350,7 @@
                                   {{ i.2 }}
                                 </div>
                                 {% if not i.4 %}
-                                  <form action="/wholesaler/farmersmarket" method="post">
+                                  <form action="/wholesaler/farmersmarket/" method="post">
                                     {% csrf_token %}
                                     <input type="hidden" name="id" value="{{ i|last }}">
                                     <button type="submit" class="card-button">Interested</button>
