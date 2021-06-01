@@ -1,9 +1,12 @@
 {% load static %}
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <head>
+  <style>
+    
 
+  </style>
 </head>
-<body id='BodyMain'>
+<body id='BodyMain'> -->
     <!-- <h1>Prediction</h1>
 
     <div>
@@ -25,14 +28,57 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>AgroPro</title>
+        <link rel="icon" href=" {% static 'images/logo.png' %}" type="image/icon type">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-        
+        <style>
+          .card-sl {
+        width:20rem;
+        margin-bottom: 4rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .card-heading {
+        font-size: 18px;
+        font-weight: bold;
+        background: #fff;
+        padding: 10px 15px;
+    }
+
+    .card-text {
+        padding: 10px 15px;
+        background: #fff;
+        font-size: 14px;
+        color: #636262;
+    }
+
+    .card-button {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        width: 100%;
+        background-color: #50C878;
+        color: #fff;
+        border-radius: 0 0 8px 8px;
+        border:2px solid #50C878;
+    }
+
+    .card-button:hover {
+        text-decoration: none;
+        background-color: #006600;
+        color: #fff;
+
+    }
+        </style>
       </head>
-      <body>
+      <body  id='BodyMain'>
+       
+      
+          
         <nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color: #50C878;">
-        <a href="#" class="navbar-brand">
-            <img src="images/logo1.png" height="28" alt="">
+          <a href="/" class="navbar-brand">
+            <img src="{% static 'images/logo1.png' %}" height="28" alt="">
         </a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -41,7 +87,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
                 <a href="/" class="nav-item nav-link ">Home</a>
-                <a href="/farmer/prediction" class="nav-item nav-link active">Predict</a>
+                <a href="/farmer/prediction" class="nav-item nav-link active">Prediction</a>
             </div>
     
             <div class="navbar-nav ml-auto">
@@ -89,7 +135,7 @@
           
         </div>
           </form>
-          <button class="btn btn-primary" onclick="checkImage()" style="transform: translate(6rem,-2rem);">Submit</button>
+          <button class="btn btn-primary" onclick="checkImage()" style="transform: translate(6rem,-2rem);background-color: #50C878;">Submit</button>
         </div>
         <div class="col-md-9 offset-md-3" >
           <br>
@@ -102,6 +148,7 @@
 
           <div id = "outputDiv" style="display: grid;
                       grid-template-columns: repeat(2,0.5fr);padding-top:2rem;">
+                      
                       
                       <!-- <div style="background-color: #50C878;width: 20rem;height:12rem;margin-bottom: 5rem;color:white">
                         <div class="innerDiv" style="padding:2rem;padding-left:3rem ;">
@@ -250,16 +297,32 @@
            
             document.getElementById('outputDiv').innerHTML = "";
             for(var i=0;i<mainOutput.length;i++){
-              document.getElementById('outputDiv').innerHTML += '<div style="background-color: #50C878;width: 20rem;height:13rem;margin-bottom: 5rem;color:white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);">'+
-                '<div class="innerDiv" style="padding:2rem;padding-left:3rem ;">'+
-                  '<p><strong>Crop:</strong> '+mainOutput[i]['crop']+'</p>'+
-                '<p><strong>Production:</strong> '+mainOutput[i]['production'].toFixed(2)+'</p>'+
-                '<p><strong>Price(Assumption):</strong>'+mainOutput[i]['price'].toFixed(2)+'</p>'+
-                '<div style="align-items: center; transform: translate(4.5rem,0rem);">'+
-                  "<button class='btn btn-light' onclick = 'setCropPredict("+i+")'>Choose</button>"+
-                '</div>'+
-                '</div>'+
-                '</div>';
+              document.getElementById('outputDiv').innerHTML += '<div class="card-sl">'+
+                        '<div class="card-text">'+
+                            '<b>Crop</b>:'+mainOutput[i]['crop']+
+                        '</div>'+
+                        '<div class="card-text">'+
+                            '<b>Production</b>: '+mainOutput[i]['production'].toFixed(2)+
+                        '</div>'+
+                        '<div class="card-text">'+
+                            '<b>Price</b>: '+ mainOutput[i]['price'].toFixed(2)+
+                        '</div>'+
+                        '<div class="card-text">'+
+                            '<b>Started</b>: May 31 2021'+
+                        '</div>'+
+                        "<button onclick = 'setCropPredict("+i+")' class='card-button'>Add</a>"+
+                    '</div>';
+              //'<div style="background-color: #50C878;width: 20rem;height:13rem;margin-bottom: 5rem;color:white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);">'+
+                // '<div class="innerDiv" style="padding:2rem;padding-left:3rem ;">'+
+                //   '<p><strong>Crop:</strong> '+mainOutput[i]['crop']+'</p>'+
+                // '<p><strong>Production:</strong> '+mainOutput[i]['production'].toFixed(2)+'</p>'+
+                // '<p><strong>Price(Assumption):</strong>'+mainOutput[i]['price'].toFixed(2)+'</p>'+
+                // '<div style="align-items: center; transform: translate(4.5rem,0rem);">'+
+                //   "<button class='btn btn-light' onclick = 'setCropPredict("+i+")'>Choose</button>"+
+                // '</div>'+
+                // '</div>'+
+                // '</div>';
+                
             }
             
         })

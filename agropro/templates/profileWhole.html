@@ -1,16 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>AgroPro</title>
+    <link rel="icon" href=" {% static 'images/logo.png' %}" type="image/icon type">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color: #50C878;">
-    <a href="#" class="navbar-brand">
-        <img src="images/logo1.png" height="28" alt="">
+      <a href="/" class="navbar-brand">
+        <img src="{% static 'images/logo1.png' %}" height="28" alt="">
     </a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
@@ -55,7 +57,7 @@
         </div>
       </div>
       <div class="text-center">
-      <button class="btn btn-primary" type="submit">Save</button>
+      <button class="btn btn-primary" type="submit" style="background-color: #50C878;">Save</button>
       <button class="btn btn-light" type="submit">reset</button>
     </div>
       </form>
@@ -98,7 +100,7 @@
     </div>
   </div>
   
-  <button class="btn btn-primary" type="submit" id = 'profileSubmit' disabled>Save</button>
+  <button class="btn btn-primary" type="submit" id = 'profileSubmit' style="background-color: #50C878;" disabled>Save</button>
   
 </form>
 <button class="btn btn-light" onclick="editField()" id = 'editBtn' style="transform: translate(5rem,-2.3rem);">Edit</button>
