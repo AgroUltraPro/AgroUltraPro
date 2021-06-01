@@ -8,6 +8,102 @@
     <link rel="icon" href=" {% static 'images/logo.png' %}" type="image/icon type">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+      .card-sl {
+          width: 230px;
+          height:300px;
+          margin-bottom: 50px;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .card-image img {
+          display: block;
+          height: 140px;
+          width: 230px;
+          margin-left: auto;
+          margin-right: auto;
+          border-radius:8px;
+      }
+
+      .card-action {
+          position: relative;
+          float: right;
+          margin-top: -25px;
+          margin-right: 20px;
+          z-index: 2;
+          color: #006600;
+          background: #fff;
+          border-radius: 100%;
+          padding: 15px;
+          font-size: 20px;
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .card-action:hover {
+          color: #fff;
+          background: #006600;
+          -webkit-animation: pulse 1.5s infinite;
+      }
+
+      .card-heading {
+          font-size: 18px;
+          font-weight: bold;
+          background: #fff;
+          padding: 10px 15px;
+      }
+
+      .card-text {
+          padding: 10px 15px;
+          background: #fff;
+          font-size: 14px;
+          color: #636262;
+      }
+
+      .card-button {
+          display: flex;
+          justify-content: center;
+          padding: 10px 0;
+          width: 100%;
+          background-color: #50C878;
+          color: #fff;
+          border-radius: 0 0 8px 8px;
+          border: 2px solid #50C878;
+      }
+
+      .card-button:hover {
+          text-decoration: none;
+          background-color: #006600;
+          color: #fff;
+
+      }
+
+
+      @-webkit-keyframes pulse {
+          0% {
+              -moz-transform: scale(0.9);
+              -ms-transform: scale(0.9);
+              -webkit-transform: scale(0.9);
+              transform: scale(0.9);
+          }
+
+          70% {
+              -moz-transform: scale(1);
+              -ms-transform: scale(1);
+              -webkit-transform: scale(1);
+              transform: scale(1);
+              box-shadow: 0 0 0 50px rgba(90, 153, 212, 0);
+          }
+
+          100% {
+              -moz-transform: scale(0.9);
+              -ms-transform: scale(0.9);
+              -webkit-transform: scale(0.9);
+              transform: scale(0.9);
+              box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+          }
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color: #50C878;">
@@ -64,8 +160,59 @@
       {% ifequal notif|length 0 %}
         <h3>No Notifications</h3>
       {% else %}
+      <div class="container" style="margin-top:20px;" >
+        <div style=" display: grid; grid-template-columns: repeat(4, 2fr);">
+          {% for  i in notif %}
+                  <div class="card-sl">
+                      <div class="card-image">
+                          <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                      </div>
+                      
+                        <!-- <a href="https://wa.me/{{ i.4 }}" >
+                          <img src= " {% static 'images/wicon.png' %} " height="18">
+                        </a> -->
+                      {% if i.3 %}
+                        <a class="card-action" href="https://wa.me/{{ i.4 }}"><i class="fa fa-whatsapp"></i></a>
+                    
+                        
+                      {% endif %}
+                      <div class="card-heading">
+                          {{i.1}}
+                      </div>
+                      <div class="card-text">
+                          <strong>Crop:</strong> {{i.0}}
+                      </div>
+                      <div class="card-text">
+                           <strong>Price:</strong> {{i.2}}
+                      </div>
+                      <!-- <div class="card-text">
+                         
+                      </div> -->
+                     
+                      {% if not i.3 %}
+                          {% ifequal utype "farmer" %}
+                            <form action="/farmer/notifications/" method="post">
+                              {% csrf_token %}
+                              <input type="hidden" name="id" value="{{ i|last }}">
+                            <td><button type="submit" class="card-button">Accept</button></td>
+                            </form>
+
+                          {% else %}
+                          <a  class="card-button">Pending</a>
+                          {% endifequal %}
+
+                      {% else %}
+                        <a  class="card-button">Accepted</a>
+                      {% endif %}
+                     
+                  </div>
+          {% endfor %}
+                  
+          
+        </div>
+        </div>
       
-      <div class="table-responsive">
+      <!-- <div class="table-responsive">
         <table class="table table-hover">
           <th>Sr. No</th>
           <th>Crop</th>
@@ -79,7 +226,7 @@
                       <td>{{ i.0 }}</td>
                       <td>{{ i.1 }}</td>
                       <td>{{ i.2 }}</td>
-                      <!-- <td>{{ i|last }}</td> -->
+                      <td>{{ i|last }}</td> 
                       {% if not i.3 %}
                         {% ifequal utype "farmer" %}
                           <form action="/farmer/notifications/" method="post">
@@ -93,7 +240,7 @@
                         {% endifequal %}
 
                       {% else %}
-                        <!-- <td>Accepted</td> -->
+                        <td>Accepted</td> 
                         <td><a href="https://wa.me/{{ i.4 }}" >
                           <img src= " {% static 'images/wicon.png' %} " height="28">
                         </a></td>
@@ -101,7 +248,7 @@
                       </tr>
           {% endfor %}
             
-          <!-- <tr>
+          <tr>
             <td class="number text-left">2</td>
           </tr>
           <tr>
@@ -112,9 +259,12 @@
           </tr>
           <tr>
             <td class="number text-left">5</td>
-          </tr> -->
+          </tr>
         </tbody></table>
-      </div>
+
+
+
+      </div> -->
       {% endifequal %}
 </div>
 </div>
