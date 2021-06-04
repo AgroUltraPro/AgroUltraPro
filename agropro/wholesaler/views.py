@@ -45,12 +45,14 @@ def market(request):
         print(crops)
         # Order By
         ob=""
-        if request.GET.get('orderbyname') is not None:
-            ob=request.GET.get('orderbyname')
+        if request.GET.get('orderby') is not None:
+            ob=request.GET.get('orderby')
         if ob=="Name":
             crops=sorted(crops, key=lambda x: x[0])
+            print(crops)
         if ob=="Date":
-            crops=sorted(crops, key=lambda x: x[-1])
+            crops=(sorted(crops, key=lambda x: x[-1]))
+            crops=crops[::-1]
         
         for i in crops:
             del i[-1]
@@ -156,10 +158,12 @@ def notification(request):
         # Order By
         ob=request.GET.get('orderby')
         if ob=="Pending":
-            crops=sorted(notif_final, key=lambda x: x[3])
+            notif_final=sorted(notif_final, key=lambda x: x[3])
         if ob=="Accepted":
-            crops=(sorted(notif_final, key=lambda x: x[3])).reverse()
+            notif_final=(sorted(notif_final, key=lambda x: x[3]))
+            notif_final=notif_final[::-1]
 
+        print("Sorted List: ******",notif_final)
 
         context={'utype':utype,'username':request.user.username[:request.user.username.rfind('-')],"notif":notif_final,"n":4}
         return render(request,'notif.html',context)
