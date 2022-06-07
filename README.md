@@ -21,4 +21,4 @@ A farmer can click a picture of soil, set his location and area parameters and f
 - JavaScript
 
 ## Soil Analysis and Crop Recommendation using Machine Learning
-Paper: https://drive.google.com/file/d/1c2wrIfu-lclDtl2F3hLKoJ2MdvAI0UWb/view?usp=sharing
+Paper: https://ieeexplore.ieee.org/document/9725901
